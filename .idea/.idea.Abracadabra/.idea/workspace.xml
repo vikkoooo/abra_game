@@ -12,6 +12,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CloudCreater.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CloudMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerGrounded.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerMovement_2.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1xGSxLEx5oF5o6WAeDD65RoCmKX" />
   <component name="ProjectViewState">
@@ -59,6 +60,7 @@
       <workItem from="1629980189774" duration="8733000" />
       <workItem from="1630049478715" duration="5000" />
       <workItem from="1630049568963" duration="5871000" />
+      <workItem from="1630058050959" duration="5048000" />
     </task>
     <servers />
   </component>

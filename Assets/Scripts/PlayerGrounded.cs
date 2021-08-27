@@ -13,17 +13,11 @@ public class PlayerGrounded : MonoBehaviour
         player = transform.parent.gameObject;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-                
-    }
-
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.collider.CompareTag("Ground"))
         {
-            player.GetComponent<PlayerMovement>().isGrounded = true;
+            player.GetComponent<PlayerMovement_2>().isGrounded = true;
         }
     }
 
@@ -31,7 +25,7 @@ public class PlayerGrounded : MonoBehaviour
     {
         if (collision.collider.CompareTag("Ground"))
         {
-            player.GetComponent<PlayerMovement>().isGrounded = false;
+            player.GetComponent<PlayerMovement_2>().isGrounded = false;
         }
     }
 }

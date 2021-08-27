@@ -2,14 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement_2 : MonoBehaviour
 {
-
+ 
     public float movementSpeed = 15f;
-    public Vector2 jumpHeight = new Vector2(0f, 7f);
+    public Vector2 jumpHeight = new Vector2(0f, 6.5f);
     public bool isGrounded = false;
     private int n_jumps;
     public Transform wizard;
+    private bool isWalking = false;
 
     // Update is called once per frame
     void Update()
@@ -22,19 +23,26 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetAxisRaw("Horizontal") > 0)
         {
             transform.localScale = new Vector3(-1, 1, 1);
-            WobbleRight();
+            isWalking = true;
         }
         // Left
         else if (Input.GetAxisRaw("Horizontal") < 0)
         {
             transform.localScale = new Vector3(1, 1, 1);
-            WobbleLeft();
+            isWalking = true;
         }
         // Standing still
         else
         {
+            isWalking = false;
             wizard.transform.rotation = Quaternion.identity;
         }
+
+        if (isWalking == true)
+        {
+            Wobble();
+        }
+        
     }
 
     private void Jump()
@@ -53,15 +61,27 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
+    private bool wobbleDir = false;
+    private void Wobble()
+    {
+        if (wobbleDir == true)
+        {
+            wizard.transform.rotation = Quaternion.Lerp(wizard.transform.rotation, Quaternion.Euler(0, 0, 4), 0.05f);
+        }        
+        else
+        {
+            wizard.transform.rotation = Quaternion.Lerp(wizard.transform.rotation, Quaternion.Euler(0,0,-4), 0.05f);
+        }
 
-    private void WobbleRight()
-    {
-        wizard.transform.rotation = Quaternion.Lerp(wizard.transform.rotation, Quaternion.Euler(0,0,4), 0.1f);
+        if (wizard.transform.rotation == Quaternion.Euler(0, 0, 4))
+        {
+            wobbleDir = !wobbleDir;
+        }
+            
+        if (wizard.transform.rotation == Quaternion.Euler(0, 0, -4))
+        {
+            wobbleDir = !wobbleDir;
+        }
     }
-    
-    private void WobbleLeft()
-    {
-        wizard.transform.rotation = Quaternion.Lerp(wizard.transform.rotation, Quaternion.Euler(0,0,-4), 0.1f);
-    }
-    
+
 }
