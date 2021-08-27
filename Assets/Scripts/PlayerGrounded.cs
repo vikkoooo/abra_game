@@ -17,7 +17,7 @@ public class PlayerGrounded : MonoBehaviour
     {
         if (collision.collider.CompareTag("Ground"))
         {
-            player.GetComponent<PlayerMovement_2>().isGrounded = true;
+            player.GetComponent<PlayerMovement>().isGrounded = true;
         }
     }
 
@@ -25,7 +25,7 @@ public class PlayerGrounded : MonoBehaviour
     {
         if (collision.collider.CompareTag("Ground"))
         {
-            player.GetComponent<PlayerMovement_2>().isGrounded = false;
+            player.GetComponent<PlayerMovement>().isGrounded = false;
         }
     }
 }

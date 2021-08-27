@@ -5,6 +5,16 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - ETH
+  - Gold
+  - OHM
+  - xSUSHI
+  - USDC
+  - IB
+  - STETH
+  - USDT
+  - WETH
+  - YFI
   layers:
   - Default
   - TransparentFX
