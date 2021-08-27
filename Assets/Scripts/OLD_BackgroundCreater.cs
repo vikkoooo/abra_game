@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class BackgroundMaker : MonoBehaviour
+public class BackgroundCreater : MonoBehaviour
 {
     public GameObject background;
     private int n_right = 15;

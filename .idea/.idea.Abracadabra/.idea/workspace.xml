@@ -8,9 +8,10 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CloudRandomizer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CloudCreater.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CloudMovement.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GroundMaker.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerGrounded.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1xGSxLEx5oF5o6WAeDD65RoCmKX" />
   <component name="ProjectViewState">
@@ -56,6 +57,8 @@
       <option name="presentableId" value="Default" />
       <updated>1629980180294</updated>
       <workItem from="1629980189774" duration="8733000" />
+      <workItem from="1630049478715" duration="5000" />
+      <workItem from="1630049568963" duration="5871000" />
     </task>
     <servers />
   </component>

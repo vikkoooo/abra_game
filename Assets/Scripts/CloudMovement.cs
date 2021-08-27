@@ -6,7 +6,7 @@ public class CloudMovement : MonoBehaviour
 {
     private float speed = 5f;
     private float minX = -11f;
-    private float maxX = 11f;
+    private float maxX = 150f;
     private float y;
 
     void Start()

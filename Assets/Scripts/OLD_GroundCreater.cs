@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GroundMaker : MonoBehaviour
+public class GroundCreater : MonoBehaviour
 {
     public GameObject ground;
     private int n_right = 3;
-    private float startX = -4.54f;
+    private float startX = -4.74f;
     private float startY = -4.05f;
     private float toMoveX = 4.54f + 4.06f; // 8,6
     
