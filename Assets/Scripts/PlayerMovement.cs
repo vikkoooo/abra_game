@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private int n_jumps;
     public Transform wizard;
     private bool isWalking = false;
+    private bool wobbleDirection = false;
 
     // Update is called once per frame
     void Update()
@@ -60,12 +61,10 @@ public class PlayerMovement : MonoBehaviour
             GetComponent<Rigidbody2D>().AddForce(jumpHeight, ForceMode2D.Impulse);
         }
     }
-
-
-    private bool wobbleDir = false;
+    
     private void Wobble()
     {
-        if (wobbleDir == true)
+        if (wobbleDirection == true)
         {
             wizard.transform.rotation = Quaternion.Lerp(wizard.transform.rotation, Quaternion.Euler(0, 0, 4), 0.025f);
         }        
@@ -76,12 +75,12 @@ public class PlayerMovement : MonoBehaviour
 
         if (wizard.transform.rotation == Quaternion.Euler(0, 0, 4))
         {
-            wobbleDir = !wobbleDir;
+            wobbleDirection = !wobbleDirection;
         }
             
         if (wizard.transform.rotation == Quaternion.Euler(0, 0, -4))
         {
-            wobbleDir = !wobbleDir;
+            wobbleDirection = !wobbleDirection;
         }
     }
 

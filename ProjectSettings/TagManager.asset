@@ -15,6 +15,9 @@ TagManager:
   - USDT
   - WETH
   - YFI
+  - Goal
+  - Enemy
+  - MIM
   layers:
   - Default
   - TransparentFX
