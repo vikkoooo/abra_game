@@ -56,7 +56,7 @@ public class PlayerHealthManaPower : MonoBehaviour
 	    {
 		    currentMana += mana;
 		    manaSlider.value = currentMana;
-		    leverage.GetComponent<Text>().text = currentMana.ToString();
+		    leverage.GetComponent<Text>().text = currentMana.ToString() + "x";
 	    }
     }
     
@@ -70,16 +70,16 @@ public class PlayerHealthManaPower : MonoBehaviour
 
     private void SummonMIM(int leverageToUse)
     {
-	    int baseMIM = 10;
+	    int baseMIM = 4;
 	    currentMana = 0;
 	    manaSlider.value = currentMana;
-	    leverage.GetComponent<Text>().text = currentMana.ToString();
+	    leverage.GetComponent<Text>().text = currentMana.ToString() + "x";
 
 	    for (int i = 0; i < leverageToUse * baseMIM; i++)
 	    {
 		    GameObject newMIM = Instantiate(MIM);
 		    newMIM.transform.position =
-			    this.transform.position + new Vector3(Random.Range(-5, 5), Random.Range(2, 10), 0);
+			    this.transform.position + new Vector3(Random.Range(-5, 5), Random.Range(2, 8), 0);
 		    
 	    }
 	    

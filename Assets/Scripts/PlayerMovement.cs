@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
  
     public float movementSpeed = 15f;
-    public Vector2 jumpHeight = new Vector2(0f, 6.5f);
+    public Vector2 jumpHeight = new Vector2(0f, 8f);
     public bool isGrounded = false;
     private int n_jumps;
     public Transform wizard;

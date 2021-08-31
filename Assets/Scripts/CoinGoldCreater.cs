@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CoinCreater : MonoBehaviour
+public class CoinGoldCreater : MonoBehaviour
 {
     // Coin
     public GameObject coin;
