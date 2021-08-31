@@ -7,7 +7,7 @@ public class PlayerBullet : MonoBehaviour
 
     public float speed = 20f;
     public Rigidbody2D body;
-    public int damage = 1;
+    public int damage = 25;
     
     // Start is called before the first frame update
     void Start()
