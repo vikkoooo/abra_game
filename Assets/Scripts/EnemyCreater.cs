@@ -1,36 +1,32 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Script is used to create enemys on regular basis timeframe
+ * They spawn close to the player at all times
+ */
 public class EnemyCreater : MonoBehaviour
 {
-    public GameObject player;
-    public GameObject dragon;
-    public GameObject skull;
-    public GameObject girlLeft;
-    public GameObject girlRight;
-    private Vector3 offset = new Vector3(10, 6, 0);
-    private List<GameObject> monster = new List<GameObject>();
+	public GameObject[] enemies;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        monster.Add(dragon);
-        monster.Add(skull);
-        monster.Add(girlLeft);
-        monster.Add(girlRight);
-        StartCoroutine(SpawnMonster());
-    }
+	// Spawn method is offset from the player
+	public GameObject player;
+	private Vector3 offset = new Vector3(10, 6, 0);
 
-    IEnumerator SpawnMonster()
-    {
-        int monsterType = Random.Range(1, 5) - 1;
-        
-	    GameObject newMonster = Instantiate(monster[monsterType]);
-        newMonster.transform.position = player.transform.position + offset;
-        newMonster.transform.parent = this.transform;
-        
-        yield return new WaitForSeconds(Random.Range(3, 8));
-        StartCoroutine(SpawnMonster());
-    }
+	private void Start()
+	{
+		StartCoroutine(SpawnMonster()); // Start coroutine
+	}
+
+	private IEnumerator SpawnMonster()
+	{
+		int monsterType = Random.Range(0, enemies.Length);
+
+		GameObject newMonster = Instantiate(enemies[monsterType]);
+		newMonster.transform.position = player.transform.position + offset;
+		newMonster.transform.parent = this.transform;
+
+		yield return new WaitForSeconds(Random.Range(3, 8));
+		StartCoroutine(SpawnMonster());
+	}
 }

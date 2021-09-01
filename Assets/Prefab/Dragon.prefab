@@ -254,7 +254,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &-3486141713938415845
 BoxCollider2D:
@@ -294,5 +294,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6bf542674cb6ab4fa2a44a07aa747fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  deathEffect: {fileID: 0}
+  crypto:
+  - {fileID: 3181325356135280351, guid: 9cfc996ca464b1d469e86018b0c17eff, type: 3}
+  - {fileID: 5712090907197206294, guid: e7ae944d9fa672043b5bf75903b74231, type: 3}
+  - {fileID: 7591992896320146160, guid: ad2c3448f8fda6b47bca2fbf0313c1d1, type: 3}
+  - {fileID: 1734696926531527460, guid: d19db45bbc61bde4a84779cc3254df53, type: 3}
+  - {fileID: 3395842515219432494, guid: ae4571dcbe8b033499bca189daf5602e, type: 3}
+  - {fileID: 3199969533342234374, guid: 8a544a9b982982d459db80c95747d198, type: 3}
+  - {fileID: 1429178592646477768, guid: 6801c8681898c3d4db91abc3feeb8afa, type: 3}
+  - {fileID: 4230946756234241814, guid: 4458acd6bb33d4445bd0bec3fa8ce49f, type: 3}

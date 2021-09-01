@@ -1,9 +1,10 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerGrounded : MonoBehaviour
+/*
+ * This class is used to only allow initial jump once grounded
+ * This script is attached to groundcheck child of player
+ */
+public class OLDPlayerGrounded : MonoBehaviour
 {
     private GameObject player;
     
@@ -17,7 +18,7 @@ public class PlayerGrounded : MonoBehaviour
     {
         if (collision.collider.CompareTag("Ground"))
         {
-            player.GetComponent<PlayerMovement>().isGrounded = true;
+            player.GetComponent<OLDPlayerMovement>().isGrounded = true;
         }
     }
 
@@ -25,7 +26,7 @@ public class PlayerGrounded : MonoBehaviour
     {
         if (collision.collider.CompareTag("Ground"))
         {
-            player.GetComponent<PlayerMovement>().isGrounded = false;
+            player.GetComponent<OLDPlayerMovement>().isGrounded = false;
         }
     }
 }

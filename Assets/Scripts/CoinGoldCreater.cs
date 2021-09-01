@@ -1,46 +1,39 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * This script creates coins on a randomized position set by intervals
+ */
 public class CoinGoldCreater : MonoBehaviour
 {
-    // Coin
-    public GameObject coin;
-    
-    // Creating 
-    private int n_coins = 50;
+	public GameObject coin; // Coin to create
+	private int n_coins = 50; // How many?
 
-    private float minX = -0.2f;
-    private float maxX = 148f;
-    private float minY = -0.2f;
-    private float maxY = 0f;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        // Create coins
-        CreateCoins(n_coins);
-    }
+	// At what range in the map should they be spawned
+	private float minX = -0.2f;
+	private float maxX = 148f;
+	private float minY = -0.2f;
+	private float maxY = 0f;
 
-    
-    private void CreateCoins(int n_coins)
-    {
-        for (int i = 0; i < n_coins; i++)
-        {
-            
-            GameObject newCoin = Instantiate(coin);
-            newCoin.transform.parent = this.transform;
-            
-            // Set new position of the cloud
-            newCoin.transform.position = RandomizePosition();
-        }
-    }
+	private void Start()
+	{
+		CreateCoins(n_coins); // Create coins
+	}
 
-    private Vector2 RandomizePosition()
-    {
-        float x = Random.Range(minX, maxX);
-        float y = Random.Range(minY, maxY);
+	private void CreateCoins(int n_coins)
+	{
+		for (int i = 0; i < n_coins; i++)
+		{
+			GameObject newCoin = Instantiate(coin); // Create new coin
+			newCoin.transform.parent = this.transform; // Pack it together with the thing this script is attached to
+			newCoin.transform.position = RandomizePosition(); // Set new position of the coin
+		}
+	}
 
-        return new Vector2(x, y);
-    }
+	private Vector2 RandomizePosition()
+	{
+		float x = Random.Range(minX, maxX);
+		float y = Random.Range(minY, maxY);
+
+		return new Vector2(x, y);
+	}
 }

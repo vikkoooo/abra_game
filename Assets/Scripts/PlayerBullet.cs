@@ -1,37 +1,29 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * This script is attached to the bullet prefab and will trigger when collided with Enemy
+ */
 public class PlayerBullet : MonoBehaviour
 {
+	private float speed = 20f; // Bullet speed
+	private int damage = 25; // Bullet damage
 
-    public float speed = 20f;
-    public Rigidbody2D body;
-    public int damage = 25;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        body.velocity = transform.right * speed;
-    }
-    
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-    
-        if (collision.CompareTag("Enemy"))
-        {
+	private void Start()
+	{
+		// Gets the rigidbody of the bullet and adds force to it as soon as it spawns
+		this.GetComponent<Rigidbody2D>().velocity = transform.right * speed;
+	}
 
-            EnemyHealth enemy = collision.GetComponent<EnemyHealth>();
+	private void OnTriggerEnter2D(Collider2D collidedObject)
+	{
+		// Checks if the bullet collided with the enemy
+		if (collidedObject.CompareTag("Enemy"))
+		{
+			// Access public method "TakeDamage()" in EnemyStats class
+			collidedObject.GetComponent<EnemyStats>().TakeDamage(damage);
 
-            if (enemy != null)
-            {
-                enemy.TakeDamage(damage);
-            }
-            Destroy(gameObject);
-        }
-        
-        
-        
-    }
-
+			// Destroy the bullet
+			Destroy(gameObject);
+		}
+	}
 }

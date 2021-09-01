@@ -8,7 +8,6 @@ TagManager:
   - ETH
   - Gold
   - OHM
-  - xSUSHI
   - USDC
   - IB
   - STETH
@@ -18,6 +17,7 @@ TagManager:
   - Goal
   - Enemy
   - MIM
+  - XSUSHI
   layers:
   - Default
   - TransparentFX
