@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1748892042929866974}
   - component: {fileID: 4476581366429376181}
   - component: {fileID: 2337909929221128040}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Coin_USDT
   m_TagString: USDT
   m_Icon: {fileID: 0}
@@ -133,7 +133,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!1 &8290390396834040578
 GameObject:
@@ -145,7 +145,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1075720039686586838}
   - component: {fileID: 2579886220635084281}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Token_USDT
   m_TagString: Untagged
   m_Icon: {fileID: 0}

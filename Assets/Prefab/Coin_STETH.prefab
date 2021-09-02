@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 868788406375632551}
   - component: {fileID: 8414295500800297196}
   - component: {fileID: -2365189543171758380}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Coin_STETH
   m_TagString: STETH
   m_Icon: {fileID: 0}
@@ -133,7 +133,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!1 &8139763012934359210
 GameObject:
@@ -145,7 +145,7 @@ GameObject:
   m_Component:
   - component: {fileID: 384420556692213774}
   - component: {fileID: 7220078840324574935}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Token_STETH
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 637802903175460167}
   - component: {fileID: 5804962554080162374}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Token_YFI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 7418605467606136655}
   - component: {fileID: -7803080351965891055}
   - component: {fileID: 5438333965200620490}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Coin_YFI
   m_TagString: YFI
   m_Icon: {fileID: 0}
@@ -215,5 +215,5 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 0

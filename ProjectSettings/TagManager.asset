@@ -18,11 +18,12 @@ TagManager:
   - Enemy
   - MIM
   - XSUSHI
+  - xSUSHI
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Coin
   - Water
   - UI
   - 

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 445267755015842641}
   - component: {fileID: -7473574712208423277}
   - component: {fileID: -582526201393299336}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Coin_xSUSHI
   m_TagString: xSUSHI
   m_Icon: {fileID: 0}
@@ -133,7 +133,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!1 &4654709659943454831
 GameObject:
@@ -145,7 +145,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5513396425884193588}
   - component: {fileID: 607139103470390686}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Token_xSUSHI
   m_TagString: Untagged
   m_Icon: {fileID: 0}

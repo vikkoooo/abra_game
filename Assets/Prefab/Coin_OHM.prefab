@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1247179542984720422}
   - component: {fileID: 3003700921785840001}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: token_OHM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 4830347379806148913}
   - component: {fileID: 3961282156747968895}
   - component: {fileID: 8903803002888919053}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Coin_OHM
   m_TagString: OHM
   m_Icon: {fileID: 0}
@@ -215,5 +215,5 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 0

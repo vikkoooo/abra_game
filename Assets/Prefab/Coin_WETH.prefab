@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8792936167732961081}
   - component: {fileID: 830974989060181859}
   - component: {fileID: -6086871842818712865}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Coin_WETH
   m_TagString: WETH
   m_Icon: {fileID: 0}
@@ -133,7 +133,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!1 &8800714200704785070
 GameObject:
@@ -145,7 +145,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4193648068071773530}
   - component: {fileID: 2015269479723708112}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Token_WETH
   m_TagString: Untagged
   m_Icon: {fileID: 0}
