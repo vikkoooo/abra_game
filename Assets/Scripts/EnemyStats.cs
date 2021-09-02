@@ -43,7 +43,7 @@ public class EnemyStats : MonoBehaviour
 			int cryptoType = Random.Range(0, crypto.Length);
 			GameObject newCrypto = Instantiate(crypto[cryptoType]);
 			Vector3 offset = new Vector3(Random.Range(minX, maxX), Random.Range(minY, maxY));
-		
+			
 			// Sets position of the spawned crypto with offset from the monster
 			newCrypto.transform.position = this.transform.position + offset;
 		}

@@ -1,42 +1,31 @@
-using System.Collections.Generic;
 using UnityEngine;
+
+/*
+ * This class spawns randomly a SPELL or sSPELL wand for the player on start
+ */
 
 public class PlayerWeaponCreater : MonoBehaviour
 {
-    // Weapons
-    // TODO: make array from this instead
-    public GameObject SPELL;
-    public GameObject sSPELL;
-    
-    // Creating 
-    private List<GameObject> weaponList = new List<GameObject>();
-    
+	// Weapons
+	public GameObject[] weapons;
 	
-    // Because we flip player on start, we need to create the new wand before we start. 
-    // Hence Awake()
-    void Awake()
-    {
-        weaponList.Add(SPELL);
-        weaponList.Add(sSPELL);
+	// Weapon offset
+	private Vector3 offset = new Vector3(-1.15f, 2f, 0);
 
-        CreateWeapon();
-    }
+	// Because we flip player on start, we need to create the new wand before we start. 
+	// Hence Awake()
+	void Awake()
+	{
+		CreateWeapon();
+	}
 
-    
-    private void CreateWeapon()
-    {
-            int weaponType = Random.Range(0, 2);
-            GameObject newWeapon = Instantiate(weaponList[weaponType]);
-            newWeapon.transform.parent = this.transform;
-            
-            // the weapon spawns according to world positions, according to the prefab positions.
-            // need to adjust those and add to the player positions.
-            newWeapon.transform.position = new Vector3(-1.15f, 2f, 0) + this.transform.position;
-            
-            
-            // TODO: adjust prefab positions so they spawn good, then use this line instead
-            //newWeapon.transform.position += this.transform.position;
+	private void CreateWeapon()
+	{
+		int weaponType = Random.Range(0, weapons.Length);
+		GameObject newWeapon = Instantiate(weapons[weaponType]);
+		newWeapon.transform.parent = this.transform;
 
-    }
-
+		// Adjust weapon to follow player with the offset as well
+		newWeapon.transform.position = this.transform.position + offset;
+	}
 }
