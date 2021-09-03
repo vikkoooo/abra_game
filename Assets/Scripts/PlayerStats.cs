@@ -1,5 +1,7 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 /*
  * This class looks for collisions in currencies, and stores it to display balance.
@@ -11,14 +13,34 @@ public class PlayerStats : MonoBehaviour
 	// Currency balance
 	private int gold;
 	private int mim;
-	private int ib;
+	private int weth;
 	private int ohm;
 	private int steth;
 	private int usdc;
 	private int usdt;
-	private int weth;
 	private int xsushi;
 	private int yfi;
+	
+	// USD value for 1 token
+	private float mimValue = 1.009f;
+	private float wethValue = 3961.104f;
+	private float ohmValue = 320.206f;
+	private float stethValue = 3938.608f;
+	private float usdcValue = 1.001f;
+	private float usdtValue = 1.003f;
+	private float xsushiValue = 15.704f;
+	private float yfiValue = 39076.101f;
+	
+	// Text field to update values and dollar values
+	public GameObject goldText;
+	public GameObject mimText;
+	public GameObject wethText;
+	public GameObject ohmText;
+	public GameObject stethText;
+	public GameObject usdcText;
+	public GameObject usdtText;
+	public GameObject xsushiText;
+	public GameObject yfiText;
 
 	// Player settings
 	// Health
@@ -35,7 +57,7 @@ public class PlayerStats : MonoBehaviour
 
 	// Ultimate power
 	public GameObject leverageText;
-	public GameObject MIM;
+	public GameObject mimCoin;
 	private int multiplier = 4; // How many coins do we want to spawn? Multiplies with leverage
 
 	// Position range for the coins spawned by ultimate
@@ -66,6 +88,26 @@ public class PlayerStats : MonoBehaviour
 		}
 	}
 
+	private void LateUpdate()
+	{
+		goldText.GetComponent<Text>().text = gold.ToString();
+		mimText.GetComponent<Text>().text = UpdateBalance(mim, mimValue);
+		wethText.GetComponent<Text>().text = UpdateBalance(weth, wethValue);
+
+		ohmText.GetComponent<Text>().text = UpdateBalance(ohm, ohmValue);
+		stethText.GetComponent<Text>().text = UpdateBalance(steth, stethValue);
+		usdcText.GetComponent<Text>().text = UpdateBalance(usdc, usdcValue);
+		
+		usdtText.GetComponent<Text>().text = UpdateBalance(usdt, usdtValue);
+		xsushiText.GetComponent<Text>().text = UpdateBalance(xsushi, xsushiValue);
+		yfiText.GetComponent<Text>().text = UpdateBalance(yfi, yfiValue);
+	}
+
+	private String UpdateBalance(int n, float value)
+	{
+		return n + "  =  " + (n * value) + "  USD";
+	}
+	
 	private void OnTriggerEnter2D(Collider2D collidedObject)
 	{
 		// Checks which object we collided with using tags
@@ -79,7 +121,7 @@ public class PlayerStats : MonoBehaviour
 		// Goal makes us win
 		else if (collidedObject.CompareTag("Goal"))
 		{
-			Debug.Log("you win");
+			GetComponent<MenuManager>().YouWin();
 		}
 		// MIM gives us HP
 		else if (collidedObject.CompareTag("MIM"))
@@ -94,11 +136,6 @@ public class PlayerStats : MonoBehaviour
 			TakeDamage();
 		}
 		// Other tokens add to balance
-		else if (collidedObject.CompareTag("IB"))
-		{
-			ib++;
-			Destroy(collidedObject.gameObject);
-		}
 		else if (collidedObject.CompareTag("OHM"))
 		{
 			ohm++;
@@ -124,7 +161,7 @@ public class PlayerStats : MonoBehaviour
 			weth++;
 			Destroy(collidedObject.gameObject);
 		}
-		else if (collidedObject.CompareTag("XSUSHI"))
+		else if (collidedObject.CompareTag("xSUSHI"))
 		{
 			xsushi++;
 			Destroy(collidedObject.gameObject);
@@ -178,10 +215,10 @@ public class PlayerStats : MonoBehaviour
 		// If dieded
 		if (currentHealth <= 0)
 		{
-			Debug.Log("you died");
+			GetComponent<MenuManager>().GameOver();
 		}
 	}
-
+	
 	private void CastUltimate(int leverage)
 	{
 		currentMana = 0; // Reset the mana
@@ -190,7 +227,7 @@ public class PlayerStats : MonoBehaviour
 
 		for (int i = 0; i < leverage * multiplier; i++)
 		{
-			GameObject newMIM = Instantiate(MIM);
+			GameObject newMIM = Instantiate(mimCoin);
 			Vector3 offset = new Vector3(Random.Range(minX, maxX), Random.Range(minY, maxY));
 			
 			// Sets position of the spawned MIM with offset from the player

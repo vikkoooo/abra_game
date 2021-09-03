@@ -11,7 +11,7 @@ public class EnemyStats : MonoBehaviour
 
 	// Array of coins that the monsters can spawn
 	public GameObject[] crypto;
-	private int n_coins = 25; // How many coins does the monster spawn?
+	private int n_coins = 15; // How many coins does the monster spawn?
 
 	// Position range for the coins spawned by monster
 	private int minX = -2;
