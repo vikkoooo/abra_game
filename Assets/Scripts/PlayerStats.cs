@@ -12,14 +12,14 @@ public class PlayerStats : MonoBehaviour
 {
 	// Currency balance
 	private int gold;
-	private int mim;
-	private int weth;
-	private int ohm;
-	private int steth;
-	private int usdc;
-	private int usdt;
-	private int xsushi;
-	private int yfi;
+	private float mim;
+	private float weth;
+	private float ohm;
+	private float steth;
+	private float usdc;
+	private float usdt;
+	private float xsushi;
+	private float yfi;
 	
 	// USD value for 1 token
 	private float mimValue = 1.009f;
@@ -103,7 +103,7 @@ public class PlayerStats : MonoBehaviour
 		yfiText.GetComponent<Text>().text = UpdateBalance(yfi, yfiValue);
 	}
 
-	private String UpdateBalance(int n, float value)
+	private String UpdateBalance(float n, float value)
 	{
 		return n + "  =  " + (n * value) + "  USD";
 	}
@@ -126,7 +126,7 @@ public class PlayerStats : MonoBehaviour
 		// MIM gives us HP
 		else if (collidedObject.CompareTag("MIM"))
 		{
-			mim++;
+			mim += 1000;
 			IncreaseHP();
 			Destroy(collidedObject.gameObject);
 		}
@@ -138,37 +138,37 @@ public class PlayerStats : MonoBehaviour
 		// Other tokens add to balance
 		else if (collidedObject.CompareTag("OHM"))
 		{
-			ohm++;
+			ohm += 3f;
 			Destroy(collidedObject.gameObject);
 		}
 		else if (collidedObject.CompareTag("STETH"))
 		{
-			steth++;
+			steth += 0.1f;
 			Destroy(collidedObject.gameObject);
 		}
 		else if (collidedObject.CompareTag("USDC"))
 		{
-			usdc++;
+			usdc += 1000;
 			Destroy(collidedObject.gameObject);
 		}
 		else if (collidedObject.CompareTag("USDT"))
 		{
-			usdt++;
+			usdt += 1000;
 			Destroy(collidedObject.gameObject);
 		}
 		else if (collidedObject.CompareTag("WETH"))
 		{
-			weth++;
+			weth += 0.1f;
 			Destroy(collidedObject.gameObject);
 		}
 		else if (collidedObject.CompareTag("xSUSHI"))
 		{
-			xsushi++;
+			xsushi += 50f;
 			Destroy(collidedObject.gameObject);
 		}
 		else if (collidedObject.CompareTag("YFI"))
 		{
-			yfi++;
+			yfi += 0.03f;
 			Destroy(collidedObject.gameObject);
 		}
 	}
