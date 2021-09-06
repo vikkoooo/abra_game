@@ -1,5 +1,8 @@
 using System;
+using System.Collections;
+using Newtonsoft.Json;
 using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
@@ -21,7 +24,7 @@ public class PlayerStats : MonoBehaviour
 	private float xsushi;
 	private float yfi;
 	
-	// USD value for 1 token
+	// USD value for 1 token, hard coded pre values in case of api failure
 	private float mimValue = 1.009f;
 	private float wethValue = 3961.104f;
 	private float ohmValue = 320.206f;
@@ -30,6 +33,9 @@ public class PlayerStats : MonoBehaviour
 	private float usdtValue = 1.003f;
 	private float xsushiValue = 15.704f;
 	private float yfiValue = 39076.101f;
+	private string url =
+		"https://api.coingecko.com/api/v3/simple/price?ids=magic-internet-money%2Cweth%2Colympus%2Cstaked-ether%2Cusd-coin%2Ctether%2Cxsushi%2Cyearn-finance&vs_currencies=usd";
+
 	
 	// Text field to update values and dollar values
 	public GameObject goldText;
@@ -78,6 +84,35 @@ public class PlayerStats : MonoBehaviour
 		manaSlider.maxValue = maxMana;
 		manaSlider.value = currentMana;
 		leverageText.GetComponent<Text>().text = currentMana.ToString() + "x";
+
+		// Get price feeds 
+		StartCoroutine(RequestPrices());
+	}
+	
+	IEnumerator RequestPrices()
+	{
+		UnityWebRequest request = UnityWebRequest.Get(url);
+		yield return request.SendWebRequest();
+
+		if (request.isNetworkError || request.isHttpError)
+		{
+			Debug.Log("Error getting price feed");
+		}
+
+		else
+		{
+			var price = JsonConvert.DeserializeObject<ApiJSON>(request.downloadHandler.text);
+			mimValue = price.MagicInternetMoney.usd;
+			wethValue = price.weth.usd;
+			ohmValue = price.olympus.usd;
+			stethValue = price.StakedEther.usd;
+			usdcValue = price.UsdCoin.usd;
+			usdtValue = price.tether.usd;
+			xsushiValue = price.xsushi.usd;
+			yfiValue = price.YearnFinance.usd;
+			
+			Debug.Log("Success loading new prices from coingecko api");
+		}
 	}
 
 	private void Update()

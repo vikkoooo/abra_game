@@ -22,10 +22,15 @@ public class ApiTest : MonoBehaviour
 	public void GetPriceFeed()
 	{
 		StartCoroutine(RequestPrices());
+		
+		
 	}
 	
 	IEnumerator RequestPrices()
 	{
+	 string url =
+		"https://api.coingecko.com/api/v3/simple/price?ids=magic-internet-money%2Cweth%2Colympus%2Cstaked-ether%2Cusd-coin%2Ctether%2Cxsushi%2Cyearn-finance&vs_currencies=usd";
+
 		UnityWebRequest request = UnityWebRequest.Get(url);
 		yield return request.SendWebRequest();
 
@@ -50,9 +55,7 @@ public class ApiTest : MonoBehaviour
 			Debug.Log("weth_price: " + weth_price);
 			Debug.Log("ohm_price: " + ohm_price);
 		}
-		
-		
-		
 	}
+	
 
 }
