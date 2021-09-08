@@ -4181,6 +4181,7 @@ MonoBehaviour:
   - {fileID: 3128811877180662659, guid: 74c4071b89bd7954f8ec14b6594f2038, type: 3}
   - {fileID: 5472260388838138808, guid: 90542c4a4ba0fa9468b9e79bbb40a3a4, type: 3}
   - {fileID: 5962738636800277770, guid: 72109ab4d3f7984479464d11dbe9f206, type: 3}
+  - {fileID: 5962738636800277770, guid: 64180756d75d1445f8cf7e74ffefaa8d, type: 3}
   player: {fileID: 468107189}
 --- !u!4 &1253194148 stripped
 Transform:

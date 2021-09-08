@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 5962738636800277773}
   - component: {fileID: -3751913152207110733}
   - component: {fileID: 6477433257985992404}
+  - component: {fileID: 8112080690112442673}
   m_Layer: 0
-  m_Name: Skull
+  m_Name: Skull_Light
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 1c0f3170b06b2a64cbc438c57883109a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a95e78764ac964c178116c1f6b69ae3e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -98,7 +99,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 100
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -185,3 +186,15 @@ MonoBehaviour:
   - {fileID: 3199969533342234374, guid: 8a544a9b982982d459db80c95747d198, type: 3}
   - {fileID: 1429178592646477768, guid: 6801c8681898c3d4db91abc3feeb8afa, type: 3}
   - {fileID: 4230946756234241814, guid: 4458acd6bb33d4445bd0bec3fa8ce49f, type: 3}
+--- !u!114 &8112080690112442673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5962738636800277770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 523710e27cf3f42c6abd641c488014e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

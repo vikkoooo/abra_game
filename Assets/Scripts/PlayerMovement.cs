@@ -15,9 +15,10 @@ public class PlayerMovement : MonoBehaviour
 {
 	// Basic movement
 	private float movementSpeed = 15f;
+	private Rigidbody2D body;
 
 	// Jumping
-	private float jumpHeight = 9f;
+	private float jumpHeight = 12f;
 	private bool isGrounded;
 	private int n_jumps;
 
@@ -33,12 +34,12 @@ public class PlayerMovement : MonoBehaviour
 	private void Start()
 	{
 		this.transform.localScale = new Vector3(-1, 1, 1);
+		body = this.GetComponent<Rigidbody2D>();
 	}
 
 	// Update is called once per frame
 	private void Update()
 	{
-		Move(); // Constantly check for movement inputs
 		Jump(); // Constantly check for jump
 
 		// This part of the code is for the wobble and making the dude turn around
@@ -66,6 +67,8 @@ public class PlayerMovement : MonoBehaviour
 	// To avoid different wobble speed depending on framerate
 	private void FixedUpdate()
 	{
+		Move(); // Constantly check for movement
+		
 		// As long as we are walking, call wobble function
 		if (isWalking == true)
 		{
@@ -73,11 +76,12 @@ public class PlayerMovement : MonoBehaviour
 		}
 	}
 
-	// Basic movement
+	// Move rigidbody script
 	private void Move()
 	{
-		Vector3 horizontal = new Vector3(Input.GetAxis("Horizontal"), 0);
-		this.transform.position += horizontal * Time.deltaTime * movementSpeed;
+		Vector2 horizontal = new Vector2(Input.GetAxis("Horizontal"), 0);
+		body.velocity = new Vector2(horizontal.x * movementSpeed, body.velocity.y);
+
 	}
 
 	// Constantly check if the player is standing on the ground 
