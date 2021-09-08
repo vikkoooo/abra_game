@@ -25,10 +25,9 @@ public class PlayerMovement : MonoBehaviour
 	// Wobble and flip function
 	public Transform wizard;
 	private bool isWalking;
-	private bool wobbleDirection;
 	private int wobbleX = 1;
-	private float z = 4f;
-	private float t = 0.3f;
+	private float z = 4f; // How much should it wobble, large number is more rotation
+	private float t = 0.3f; // How fast should it wobble, larger number is faster rotation
 
 	// Flip the player on start
 	private void Start()
