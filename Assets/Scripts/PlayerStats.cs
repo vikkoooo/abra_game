@@ -94,7 +94,9 @@ public class PlayerStats : MonoBehaviour
 		UnityWebRequest request = UnityWebRequest.Get(url);
 		yield return request.SendWebRequest();
 
-		if (request.isNetworkError || request.isHttpError)
+		// Code recently depreciated
+		// if (request.isNetworkError || request.isHttpError)
+		if (request.result == UnityWebRequest.Result.ConnectionError) 
 		{
 			Debug.Log("Error getting price feed");
 		}
@@ -162,7 +164,7 @@ public class PlayerStats : MonoBehaviour
 		else if (collidedObject.CompareTag("MIM"))
 		{
 			mim += 1000;
-			IncreaseHP();
+			IncreaseHp();
 			Destroy(collidedObject.gameObject);
 		}
 		// Enemies hurt us
@@ -208,7 +210,7 @@ public class PlayerStats : MonoBehaviour
 		}
 	}
 
-	private void IncreaseHP()
+	private void IncreaseHp()
 	{
 		// To make it dynamic. How large / small increase is set up in settings
 		int hp = maxHealth / healthMultiplier * 2;
@@ -262,11 +264,11 @@ public class PlayerStats : MonoBehaviour
 
 		for (int i = 0; i < leverage * multiplier; i++)
 		{
-			GameObject newMIM = Instantiate(mimCoin);
+			GameObject newMim = Instantiate(mimCoin);
 			Vector3 offset = new Vector3(Random.Range(minX, maxX), Random.Range(minY, maxY));
 			
 			// Sets position of the spawned MIM with offset from the player
-			newMIM.transform.position = this.transform.position + offset;
+			newMim.transform.position = this.transform.position + offset;
 		}
 	}
 }

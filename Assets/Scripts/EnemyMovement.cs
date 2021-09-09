@@ -9,7 +9,7 @@ public class EnemyMovement : MonoBehaviour
     
     // For wobble
     private float z = 1f; // How much should it wobble, large number is more rotation
-    private float t = 0.2f; // How fast should it wobble, larger number is faster rotation
+    private float t = 0.1f; // How fast should it wobble, larger number is faster rotation
     private int wobbleX = 1;
     
     // Start is called before the first frame update
@@ -33,7 +33,7 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-    private void LateUpdate()
+    private void FixedUpdate()
     {
         Move();
     }
