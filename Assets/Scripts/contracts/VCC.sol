@@ -24,7 +24,7 @@ contract VCC is IERC20
     // Token settings
     string public constant name = "Victor Capital Coin";
     string public constant symbol = "VCC";
-    uint8 public constant decimals = 18;
+    address private deployer;
 
     // Variables 
     mapping(address => uint256) balances; // Table to map addresses to their balance
@@ -33,12 +33,21 @@ contract VCC is IERC20
 
     // Constructor
     // Initialize the contract. Supply is set and given to the contract deployer
-    constructor(uint256 totalSupplyToSet) {
+    constructor(uint256 totalSupplyToSet)
+    {
         totalSupply_ = totalSupplyToSet;
-        balances[msg.sender] = totalSupply_;
+        deployer = msg.sender;
+        balances[deployer] = totalSupply_;
+        emit Transfer(address(0), deployer, totalSupply_);
     }
 
     // Getters
+    // getDeployer
+    function getDeployer() public view returns (address theDeployer)
+    {
+        return deployer;
+    }
+
     // totalSupply function returns the total supply of tokens in existence
     // 1 token will be returned as 1000000000000000000?? I think
     function totalSupply() public override view returns (uint256 theSupply)
