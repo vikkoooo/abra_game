@@ -29,84 +29,81 @@ contract VCC is IERC20
     // Variables 
     mapping(address => uint256) balances; // Table to map addresses to their balance
     mapping(address => mapping(address => uint256)) allowed; // Mapping owner address to those who are allowed to use the contract
-    uint256 totalSupply; // totalSupply
-    
-    /*
-     *  Constructor
-     *
-     *  Initialize the contract. Supply is set and given to the contract deployer
-     */
-    constructor(uint256 total) public {
-        totalSupply = total;
-        balances[msg.sender] = totalSupply;
+    uint256 totalSupply_; // totalSupply
+
+    // Constructor
+    // Initialize the contract. Supply is set and given to the contract deployer
+    constructor(uint256 totalSupplyToSet) {
+        totalSupply_ = totalSupplyToSet;
+        balances[msg.sender] = totalSupply_;
     }
 
     // Getters
-    /*
-    *   totalSupply function. Returns the total supply of tokens in existence
-    *   Returns the amount of tokens in existence. This function is a getter and does not modify the state of the contract. Keep in mind that there is no floats in Solidity. Therefore most tokens adopt 18 decimals and will return the total supply and other results as followed 1000000000000000000 for 1 token. Not every tokens has 18 decimals and this is something you really need to watch for when dealing with tokens.
-    */
-    function totalSupply() public view returns (uint256 theTotalSupply)
+    // totalSupply function returns the total supply of tokens in existence
+    // 1 token will be returned as 1000000000000000000?? I think
+    function totalSupply() public override view returns (uint256 theSupply)
     {
-        theTotalSupply = totalSupply;
-        return theTotalSupply;
+        return totalSupply_;
     }
 
-    // balanceOf function
-    function balanceOf(address owner) public view returns (uint256 balance)
+    // balanceOf function returns the amount of tokens owned by an address
+    function balanceOf(address owner) public override view returns (uint256 balance)
     {
         return balances[owner];
     }
 
     // Check if address is allowed to spend on the owner's behalf
-    function allowance(address _owner, address _spender) public view returns (uint256 remaining)
+    function allowance(address owner, address spender) public override view returns (uint256 remaining)
     {
-        return allowed[_owner][_spender];
+        return allowed[owner][spender];
     }
 
-    // function approve
-    function approve(address _spender, uint256 _amount) public returns (bool success)
+    // Functions
+    // transfer function. Moves the amount of tokens from the function caller address (msg.sender)
+    // to recipient address. 
+    // This function emits the Transfer event and returns true if success
+    function transfer(address recipient, uint256 amount) public override returns (bool success)
+    {
+        // transfers the value if balance of sender is greater than the amount
+        if (balances[msg.sender] >= amount)
+        {
+            balances[msg.sender] -= amount;
+            balances[recipient] += amount;
+
+            // Fire a transfer event for any logic that is listening
+            emit Transfer(msg.sender, recipient, amount);
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    // function approve. Set the amount of allowance the spender address is allowed to transfer from the function
+    // caller (msg.sender). This function emits the Approval event and returns true if successful.
+    function approve(address spender, uint256 amount) public override returns (bool success)
     {
         // If the address is allowed to spend from this contract
-        allowed[msg.sender][_spender] = _amount;
+        allowed[msg.sender][spender] = amount;
 
         // Fire the event "Approval" to execute any logic that was listening to it
-        emit Approval(msg.sender, _spender, _amount);
+        emit Approval(msg.sender, spender, amount);
         return true;
     }
 
-    // transfer function
-    function transfer(address _to, uint256 _amount) public returns (bool success)
+    // Moves the amount of tokens from the sender to recipient address using the allowance mechanism. 
+    // Amount is deducted from caller's allowance. 
+    function transferFrom(address sender, address recipient, uint256 amount) public override returns (bool success)
     {
-        // transfers the value if balance of sender is greater than the amount
-        if (balances[msg.sender] >= _amount)
+        if (balances[sender] >= amount && allowed[sender][msg.sender] >= amount
+        && amount > 0 && balances[recipient] + amount > balances[recipient])
         {
-            balances[msg.sender] -= _amount;
-            balances[_to] += _amount;
-
-            // Fire a transfer event for any logic that is listening
-            emit Transfer(msg.sender, _to, _amount);
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-
-    /* The transferFrom method is used for a withdraw workflow, allowing contracts to send tokens on your behalf, 
-    *  for example to  "deposit" to a contract address and/or to charge fees in sub-currencies;
-    */
-    function transferFrom(address _from, address _to, uint256 _amount)
-    public returns (bool success)
-    {
-        if (balances[_from] >= _amount && allowed[_from][msg.sender] >= _amount && _amount > 0 && balances[_to] + _amount > balances[_to])
-        {
-            balances[_from] -= _amount;
-            balances[_to] += _amount;
+            balances[sender] -= amount;
+            balances[recipient] += amount;
 
             // Fire a Transfer event for any logic that is listening
-            emit Transfer(_from, _to, _amount);
+            emit Transfer(sender, recipient, amount);
             return true;
         }
         else
@@ -114,7 +111,6 @@ contract VCC is IERC20
             return false;
         }
     }
-
 
 }
     
