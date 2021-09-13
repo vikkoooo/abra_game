@@ -18,7 +18,9 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemyStats.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerWeapon.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemyCreater.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CryptoStats.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SceneryPipeCreater.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CryptoMenu.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1xGSxLEx5oF5o6WAeDD65RoCmKX" />
   <component name="ProjectViewState">
@@ -86,6 +88,9 @@
       <workItem from="1631177389330" duration="5154000" />
       <workItem from="1631188393768" duration="17000" />
       <workItem from="1631194713551" duration="7000" />
+      <workItem from="1631521934842" duration="773000" />
+      <workItem from="1631522863500" duration="1509000" />
+      <workItem from="1631524890112" duration="2780000" />
     </task>
     <servers />
   </component>

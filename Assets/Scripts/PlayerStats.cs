@@ -13,6 +13,8 @@ using Random = UnityEngine.Random;
 
 public class PlayerStats : MonoBehaviour
 {
+	public static float dollarValue;
+	
 	// Currency balance
 	private int gold;
 	private float mim;
@@ -74,6 +76,9 @@ public class PlayerStats : MonoBehaviour
 
 	private void Start()
 	{
+		// Set dollar value to zero
+		dollarValue = 0;
+		
 		// Set health
 		currentHealth = maxHealth; // Player starts at 100 % hp 
 		healthSlider.maxValue = currentHealth; // Give instructions to slider how big it needs to be
@@ -159,6 +164,8 @@ public class PlayerStats : MonoBehaviour
 		else if (collidedObject.CompareTag("Goal"))
 		{
 			GetComponent<MenuManager>().YouWin();
+			dollarValue = mim * mimValue + weth * wethValue + ohm * ohmValue + steth * stethValue + usdc * usdcValue + 
+			              usdt * usdtValue + xsushi * xsushiValue + yfi * yfiValue;
 		}
 		// MIM gives us HP
 		else if (collidedObject.CompareTag("MIM"))

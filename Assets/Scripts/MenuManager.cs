@@ -9,17 +9,7 @@ public class MenuManager : MonoBehaviour
 	{
 		SceneManager.LoadScene("Menu");
 	}
-	
-	public void StartFirstLevel()
-	{
-		Level1();
-	}
 
-	public void StartCurrentLevel()
-	{
-		Level1();
-	}
-	
 	public void YouWin()
 	{
 		SceneManager.LoadScene("YouWin");
@@ -35,11 +25,25 @@ public class MenuManager : MonoBehaviour
 		SceneManager.LoadScene("Level_1");
 	}
 
+	public void Level2()
+	{
+		SceneManager.LoadScene("Level_2");
+	}
 
+	public void CryptoLogin()
+	{
+		SceneManager.LoadScene("CryptoLogin");
+	}
 
+	public void LevelChooser()
+	{
+		SceneManager.LoadScene("LevelChooser");
+	}
 
-
-
+	public void Level1_Crypto()
+	{
+		SceneManager.LoadScene("Level_1_Crypto");
+	}
 
 
 }
