@@ -574,7 +574,7 @@ GameObject:
   - component: {fileID: 119281308}
   - component: {fileID: 119281307}
   m_Layer: 5
-  m_Name: VCC Balance
+  m_Name: FSPELL Balance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -597,8 +597,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -846.32, y: 301}
-  m_SizeDelta: {x: 173.05, y: 28.2821}
+  m_AnchoredPosition: {x: -830.7588, y: 301}
+  m_SizeDelta: {x: 204.1723, y: 28.2821}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &119281307
 MonoBehaviour:
@@ -633,7 +633,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'VCC   balance:'
+  m_Text: 'FSPELL   balance:'
 --- !u!222 &119281308
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1599,7 +1599,7 @@ GameObject:
   - component: {fileID: 369856049}
   - component: {fileID: 369856048}
   m_Layer: 5
-  m_Name: VccBalanceInput
+  m_Name: FspellBalanceInput
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1621,8 +1621,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 338.0927, y: -0.000021994}
-  m_SizeDelta: {x: 618.2891, y: 28.282}
+  m_AnchoredPosition: {x: 344.64478, y: -0.000021994}
+  m_SizeDelta: {x: 605.1851, y: 28.282}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &369856048
 MonoBehaviour:
@@ -1767,8 +1767,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 338.0927, y: -0.000021994}
-  m_SizeDelta: {x: 618.2891, y: 28.282}
+  m_AnchoredPosition: {x: 344.64484, y: -0.000021994}
+  m_SizeDelta: {x: 605.185, y: 28.282}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &438850860
 MonoBehaviour:
@@ -2477,8 +2477,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -846.3174, y: 339}
-  m_SizeDelta: {x: 173.0484, y: 28.2821}
+  m_AnchoredPosition: {x: -830.76, y: 339}
+  m_SizeDelta: {x: 204.17, y: 28.2821}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &528353770
 MonoBehaviour:
@@ -5256,8 +5256,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 338.0927, y: -0.000021994}
-  m_SizeDelta: {x: 618.2891, y: 28.282}
+  m_AnchoredPosition: {x: 371.88672, y: 0.000039041}
+  m_SizeDelta: {x: 662.5157, y: 28.282}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1507653521
 MonoBehaviour:
@@ -5457,8 +5457,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -874.1637, y: 376.85736}
-  m_SizeDelta: {x: 117.3557, y: 28.2821}
+  m_AnchoredPosition: {x: -830.76, y: 376.85736}
+  m_SizeDelta: {x: 204.17, y: 28.2821}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1585931749
 MonoBehaviour:
@@ -6954,8 +6954,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerAddressInput: {fileID: 1507653521}
-  vccBalance: {fileID: 369856048}
   ethBalance: {fileID: 438850860}
+  fspellBalance: {fileID: 369856048}
 --- !u!1 &2000655886
 GameObject:
   m_ObjectHideFlags: 0

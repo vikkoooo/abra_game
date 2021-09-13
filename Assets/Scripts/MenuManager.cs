@@ -15,6 +15,11 @@ public class MenuManager : MonoBehaviour
 		SceneManager.LoadScene("YouWin");
 	}
 	
+	public void YouWinCrypto()
+	{
+		SceneManager.LoadScene("YouWinCrypto");
+	}
+	
 	public void GameOver()
 	{
 		SceneManager.LoadScene("GameOver");

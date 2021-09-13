@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level_1_Crypto.unity
     guid: 60b55010a62d1884993647d242c6e0c1
+  - enabled: 1
+    path: Assets/Scenes/YouWinCrypto.unity
+    guid: 6c23add74e890ec4a83358f773c81451
   m_configObjects: {}

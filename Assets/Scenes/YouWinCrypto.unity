@@ -726,8 +726,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Y O U   R E C E I V E                                               U S
-    D
+  m_Text: Y O U   R E C E I V E                                   FSPE LL
 --- !u!222 &354701435
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1818,7 +1817,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1868463954}
         m_TargetAssemblyTypeName: OpenPackage, Assembly-CSharp
-        m_MethodName: OpenPackageGold
+        m_MethodName: OpenPackageCrypto
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

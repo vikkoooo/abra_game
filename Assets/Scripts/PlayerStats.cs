@@ -3,6 +3,7 @@ using System.Collections;
 using Newtonsoft.Json;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
@@ -163,9 +164,21 @@ public class PlayerStats : MonoBehaviour
 		// Goal makes us win
 		else if (collidedObject.CompareTag("Goal"))
 		{
-			GetComponent<MenuManager>().YouWin();
 			dollarValue = mim * mimValue + weth * wethValue + ohm * ohmValue + steth * stethValue + usdc * usdcValue + 
 			              usdt * usdtValue + xsushi * xsushiValue + yfi * yfiValue;
+			
+			if (SceneManager.GetActiveScene().name == "Level_1_Crypto")
+			{
+				GetComponent<MenuManager>().YouWinCrypto();
+			}
+			else if (SceneManager.GetActiveScene().name == "Level_1")
+			{
+				GetComponent<MenuManager>().YouWin();
+			}
+			else
+			{
+				Debug.Log("Something wrong with scene names");
+			}
 		}
 		// MIM gives us HP
 		else if (collidedObject.CompareTag("MIM"))
