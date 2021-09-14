@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 
 /*
- * Script is used to create enemys on regular basis timeframe
+ * Script is used to create enemies on regular basis timeframe
  * They spawn close to the player at all times
  */
 public class EnemyCreater : MonoBehaviour

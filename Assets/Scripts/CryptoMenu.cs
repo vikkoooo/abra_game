@@ -1,8 +1,9 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
+/*
+ * This script is attached to Crypto login menu, to fetch playerAddress. 
+ */
 
 public class CryptoMenu : MonoBehaviour
 {

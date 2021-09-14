@@ -10,6 +10,12 @@ using Nethereum.Contracts.CQS;
 using Nethereum.Contracts;
 using System.Threading;
 
+/*
+ * This script is auto created from Solidity compiler remix ABI code. The ABI code is inserted into Nethereum
+ * playground (http://playground.nethereum.com/) in the ABI Code generator. It is basically making
+ * C# code out of the Solidity contract functions, to make us able to communicate with the contract functions
+ * using C#
+ */
 
 public partial class AllowanceFunction : AllowanceFunctionBase
 {

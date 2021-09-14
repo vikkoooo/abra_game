@@ -2,6 +2,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+/*
+ * Super simple menu manager script that selects new scene by calling the methods
+ */
 public class MenuManager : MonoBehaviour
 {
 

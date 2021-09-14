@@ -20,6 +20,10 @@ using Nethereum.Web3.Accounts;
 using UnityEngine;
 using UnityEngine.UI;
 
+/*
+ * This class is running during gameplay and collects current balance for inserted ethereum address.
+ * By default it uses address "Black hole" (0x0000000000000000000000000000000000000000) if nothing is entered
+ */
 public class CryptoStats : MonoBehaviour
 {
 	// For displaying in the UI

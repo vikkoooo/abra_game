@@ -164,6 +164,8 @@ public class PlayerStats : MonoBehaviour
 		// Goal makes us win
 		else if (collidedObject.CompareTag("Goal"))
 		{
+			// Store dollar value collected by the player on the current level, for usage in the 
+			// rewards system displayed on the YouWin scene
 			dollarValue = mim * mimValue + weth * wethValue + ohm * ohmValue + steth * stethValue + usdc * usdcValue + 
 			              usdt * usdtValue + xsushi * xsushiValue + yfi * yfiValue;
 			
@@ -172,6 +174,10 @@ public class PlayerStats : MonoBehaviour
 				GetComponent<MenuManager>().YouWinCrypto();
 			}
 			else if (SceneManager.GetActiveScene().name == "Level_1")
+			{
+				GetComponent<MenuManager>().YouWin();
+			}
+			else if (SceneManager.GetActiveScene().name == "Level_2")
 			{
 				GetComponent<MenuManager>().YouWin();
 			}

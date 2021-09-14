@@ -1,4 +1,5 @@
 ﻿// Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse); 
+
 using Newtonsoft.Json;
 
 /*
@@ -48,19 +49,15 @@ public class MagicInternetMoney
 
 public class ApiJSON
 {
-	[JsonProperty("usd-coin")]
-	public UsdCoin UsdCoin { get; set; }
+	[JsonProperty("usd-coin")] public UsdCoin UsdCoin { get; set; }
 	public Tether tether { get; set; }
 	public Xsushi xsushi { get; set; }
 	public Weth weth { get; set; }
 	public Olympus olympus { get; set; }
 
-	[JsonProperty("yearn-finance")]
-	public YearnFinance YearnFinance { get; set; }
+	[JsonProperty("yearn-finance")] public YearnFinance YearnFinance { get; set; }
 
-	[JsonProperty("staked-ether")]
-	public StakedEther StakedEther { get; set; }
+	[JsonProperty("staked-ether")] public StakedEther StakedEther { get; set; }
 
-	[JsonProperty("magic-internet-money")]
-	public MagicInternetMoney MagicInternetMoney { get; set; }
+	[JsonProperty("magic-internet-money")] public MagicInternetMoney MagicInternetMoney { get; set; }
 }
